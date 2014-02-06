@@ -1,0 +1,636 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C086EB97-5D32-4CC0-8E1D-8ABEACD7A38B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LAND_COMMITEE</RootNamespace>
+    <AssemblyName>LAND_COMMITEE</AssemblyName>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>Land Com.ico</ApplicationIcon>
+    <SignManifests>false</SignManifests>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationConfig.cs" />
+    <Compile Include="beneficiary_by_cell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="beneficiary_by_cell.Designer.cs">
+      <DependentUpon>beneficiary_by_cell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Beneficiary_List.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Beneficiary_List.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="beneficiary_list_by_sector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="beneficiary_list_by_sector.Designer.cs">
+      <DependentUpon>beneficiary_list_by_sector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="beneficiary_list_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="beneficiary_list_report.Designer.cs">
+      <DependentUpon>beneficiary_list_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BenList_BY_FormerOwnerCategoryRPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BenList_BY_FormerOwnerCategoryRPT.Designer.cs">
+      <DependentUpon>BenList_BY_FormerOwnerCategoryRPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BenList_BY_NewBenCategoryRPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BenList_BY_NewBenCategoryRPT.Designer.cs">
+      <DependentUpon>BenList_BY_NewBenCategoryRPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ben_by_sector.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ben_by_sector.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ben_list_by_cell.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ben_list_by_cell.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ajouter_Prov_Distr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajouter_Prov_Distr.Designer.cs">
+      <DependentUpon>Ajouter_Prov_Distr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category_New_Owner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category_New_Owner.Designer.cs">
+      <DependentUpon>Category_New_Owner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="CrystalReport_Ben_By_FormerOwner_Category.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Ben_By_FormerOwner_Category.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_Ben_By_NewBeneficiary_Category.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Ben_By_NewBeneficiary_Category.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_FormerOwnerCategoryList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_FormerOwnerCategoryList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_ListOfNewBeneficiaryCategory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ListOfNewBeneficiaryCategory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_ListOfSurveyorCategory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ListOfSurveyorCategory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FindByName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindByName.Designer.cs">
+      <DependentUpon>FindByName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formerOwnerCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formerOwnerCategory.Designer.cs">
+      <DependentUpon>formerOwnerCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormerOwnerCategoryList_rpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormerOwnerCategoryList_rpt.Designer.cs">
+      <DependentUpon>FormerOwnerCategoryList_rpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormerOwnerLandDistribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormerOwnerLandDistribution.Designer.cs">
+      <DependentUpon>FormerOwnerLandDistribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormerOwnerList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormerOwnerList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormerOwnerListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormerOwnerListForm.Designer.cs">
+      <DependentUpon>FormerOwnerListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Former_Owners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Former_Owners.Designer.cs">
+      <DependentUpon>Former_Owners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralSettingsForm.Designer.cs">
+      <DependentUpon>GeneralSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LAND_COMMITEE_Data_Set.cs">
+      <DependentUpon>LAND_COMMITEE_Data_Set.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="list_by_usage.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>list_by_usage.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="list_owners_by_usage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="list_owners_by_usage.Designer.cs">
+      <DependentUpon>list_owners_by_usage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewBeneficiaryCategory_rpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewBeneficiaryCategory_rpt.Designer.cs">
+      <DependentUpon>NewBeneficiaryCategory_rpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotCheckedByAdministrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotCheckedByAdministrator.Designer.cs">
+      <DependentUpon>NotCheckedByAdministrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuickReport.Designer.cs">
+      <DependentUpon>QuickReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LandComHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LandComHelp.Designer.cs">
+      <DependentUpon>LandComHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LAND_COMMITEE_Data_Set.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LAND_COMMITEE_Data_Set.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LAND_INFORMATION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LAND_INFORMATION.Designer.cs">
+      <DependentUpon>LAND_INFORMATION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUser.Designer.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Result_Search_Land_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Result_Search_Land_Info.Designer.cs">
+      <DependentUpon>Result_Search_Land_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search_by_former_owner.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>search_by_former_owner.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SEARCH_By_FROMER_OWNER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEARCH_By_FROMER_OWNER.Designer.cs">
+      <DependentUpon>SEARCH_By_FROMER_OWNER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search_land_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_land_info.Designer.cs">
+      <DependentUpon>Search_land_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Security.cs" />
+    <Compile Include="SUPERVISOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUPERVISOR.Designer.cs">
+      <DependentUpon>SUPERVISOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutUs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajouter_Prov_Distr.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Ajouter_Prov_Distr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="beneficiary_by_cell.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>beneficiary_by_cell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Beneficiary_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Beneficiary_List.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="beneficiary_list_by_sector.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>beneficiary_list_by_sector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="beneficiary_list_report.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>beneficiary_list_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BenList_BY_FormerOwnerCategoryRPT.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BenList_BY_FormerOwnerCategoryRPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BenList_BY_NewBenCategoryRPT.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BenList_BY_NewBenCategoryRPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ben_by_sector.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ben_by_sector.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ben_list_by_cell.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ben_list_by_cell.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category_New_Owner.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Category_New_Owner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_Ben_By_FormerOwner_Category.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Ben_By_FormerOwner_Category.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_Ben_By_NewBeneficiary_Category.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Ben_By_NewBeneficiary_Category.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_FormerOwnerCategoryList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_FormerOwnerCategoryList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_ListOfNewBeneficiaryCategory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ListOfNewBeneficiaryCategory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_ListOfSurveyorCategory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ListOfSurveyorCategory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindByName.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FindByName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formerOwnerCategory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>formerOwnerCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormerOwnerCategoryList_rpt.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormerOwnerCategoryList_rpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormerOwnerLandDistribution.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormerOwnerLandDistribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormerOwnerList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FormerOwnerList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormerOwnerListForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormerOwnerListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Former_Owners.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Former_Owners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralSettingsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GeneralSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="list_by_usage.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>list_by_usage.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="list_owners_by_usage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>list_owners_by_usage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewBeneficiaryCategory_rpt.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewBeneficiaryCategory_rpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotCheckedByAdministrator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NotCheckedByAdministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuickReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>QuickReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassword.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LandComHelp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LandComHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LAND_INFORMATION.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LAND_INFORMATION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUser.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Result_Search_Land_Info.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Result_Search_Land_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search_by_former_owner.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>search_by_former_owner.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEARCH_By_FROMER_OWNER.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SEARCH_By_FROMER_OWNER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_land_info.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Search_land_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUPERVISOR.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SUPERVISOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurveryorListReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SurveryorListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurveyorCategory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SurveyorCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurveyorsList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SurveyorsList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurveyorWork.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SurveyorWork.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurveyorWorkReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SurveyorWorkReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserListReport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UserReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="LAND_COMMITEE_Data_Set.xsc">
+      <DependentUpon>LAND_COMMITEE_Data_Set.xsd</DependentUpon>
+    </None>
+    <None Include="LAND_COMMITEE_Data_Set.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LAND_COMMITEE_Data_Set.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LAND_COMMITEE_Data_Set.xss">
+      <DependentUpon>LAND_COMMITEE_Data_Set.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SurveryorListReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SurveryorListReport.Designer.cs">
+      <DependentUpon>SurveryorListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SurveyorCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SurveyorCategory.Designer.cs">
+      <DependentUpon>SurveyorCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SurveyorsList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SurveyorsList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SurveyorWork.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SurveyorWork.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SurveyorWorkReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SurveyorWorkReport.Designer.cs">
+      <DependentUpon>SurveyorWorkReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfo.Designer.cs">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserListReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserListReport.Designer.cs">
+      <DependentUpon>UserListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.1.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cancel.gif" />
+    <None Include="images\Refresh.gif" />
+    <Content Include="Land Com.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
